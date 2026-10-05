@@ -314,10 +314,14 @@ export default function CheckoutPage() {
       shipping_charges: shippingCharge,
       sub_total: orderSubtotal,
       total: orderTotal,
+      discountApplied: discountAmount,
       items: checkoutItems.map((item: CartItem) => ({
         sku: item.product._id,
         name: item.product.name,
         selling_price: item.product.price,
+        discount: Number(
+          ((item.product.price * couponDiscountPercentage) / 100).toFixed(2),
+        ),
         units: item.quantity,
         size: item.size,
       })),
@@ -330,6 +334,7 @@ export default function CheckoutPage() {
       address,
       checkoutItems,
       couponCode,
+      couponDiscountPercentage,
       email,
       name,
       orderSubtotal,

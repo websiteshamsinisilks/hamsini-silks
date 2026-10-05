@@ -249,7 +249,7 @@ export default function CartPage() {
                   </div>
                   {savings > 0 && (
                     <div className="flex justify-between text-emerald-700 font-semibold">
-                      <span>Coupon discount (30%)</span>
+                      <span>Coupon discount ({couponDiscountPercentage}%)</span>
                       <span>- ₹{savings.toLocaleString('en-IN')}</span>
                     </div>
                   )}

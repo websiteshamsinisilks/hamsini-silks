@@ -228,22 +228,20 @@ export default function OrderRow({ order }: { order: OrderData }) {
                       >
                         <div className="flex flex-col items-center gap-2">
                           <div
-                            className={`flex h-12 w-12 items-center justify-center rounded-full border-2 text-xl font-bold ${
-                              stage.state === 'complete'
+                            className={`flex h-12 w-12 items-center justify-center rounded-full border-2 text-xl font-bold ${stage.state === 'complete'
                                 ? 'border-maroon-900 bg-maroon-900 text-white'
                                 : stage.state === 'current'
                                   ? 'border-maroon-900 bg-white text-maroon-900'
                                   : 'border-gold-200 bg-gold-100 text-maroon-700'
-                            }`}
+                              }`}
                           >
                             {stage.icon}
                           </div>
                           <span
-                            className={`max-w-[88px] text-center text-[10px] whitespace-nowrap leading-tight ${
-                              stage.state === 'current'
+                            className={`max-w-[88px] text-center text-[10px] whitespace-nowrap leading-tight ${stage.state === 'current'
                                 ? 'font-semibold text-maroon-900'
                                 : 'text-maroon-600'
-                            }`}
+                              }`}
                           >
                             {stage.status}
                           </span>
@@ -251,11 +249,10 @@ export default function OrderRow({ order }: { order: OrderData }) {
 
                         {index < roadmap.stages.length - 1 && (
                           <div
-                            className={`h-0.5 flex-1 rounded-full ${
-                              stage.state === 'complete'
+                            className={`h-0.5 flex-1 rounded-full ${stage.state === 'complete'
                                 ? 'bg-maroon-900'
                                 : 'bg-gold-200'
-                            }`}
+                              }`}
                           />
                         )}
                       </div>
@@ -279,6 +276,10 @@ export default function OrderRow({ order }: { order: OrderData }) {
                 <div className="flex justify-between text-xs text-maroon-800 mb-2">
                   <span>Sub Total:</span>
                   <span className="font-bold">₹{order.sub_total.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex justify-between text-xs text-maroon-800 mb-2">
+                  <span>Coupon Discount:</span>
+                  <span className="font-bold">₹{order.discountApplied?.toLocaleString('en-IN') || '0'}</span>
                 </div>
                 <div className="flex justify-between text-xs text-maroon-800 mb-2">
                   <span>Shipping Charges:</span>

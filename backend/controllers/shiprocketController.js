@@ -150,7 +150,9 @@ export async function createShiprocketAdhocOrder(orderData, token) {
 
     order_items: orderData.items,
     payment_method: orderData.paymentMethod,
-    sub_total: orderData.total,
+    sub_total: orderData.total + orderData.discountApplied - orderData.shipping_charges,
+    shipping_charges: orderData.shipping_charges,
+    total_discount: orderData.discountApplied,
 
     length: 15,
     breadth: 10,

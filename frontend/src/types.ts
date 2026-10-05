@@ -13,6 +13,7 @@ export type OrderItem = {
   sku: string;
   name: string;
   selling_price: number;
+  discount?: number;
   units: number;
   size: string;
   category?: string;
@@ -20,6 +21,7 @@ export type OrderItem = {
 };
 
 export type OrderData = {
+  discountApplied?: number;
   _id?: string;
   order_id?: string;
   customerId?: string;

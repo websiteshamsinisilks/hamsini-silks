@@ -4,6 +4,7 @@ const productSchema = new mongoose.Schema({
   sku: { type: String, required: true },
   name: { type: String, required: true },
   selling_price: { type: Number, required: true },
+  discount: { type: Number, default: 0 },
   units: { type: Number, required: true },
   size: { type: String, default: 'Standard' },
 });
